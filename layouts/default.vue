@@ -40,16 +40,20 @@
       </div>
     </div>
     <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
+      <Nuxt />
     </v-main>
+    <Mainfooter v-if="this.$nuxt.$route.name != 'login'" />
   </div>
 </template>
 
 <script>
+import Mainfooter from "~/components/Mainfooter.vue";
+
 export default {
   name: "default-layout",
+  components: {
+    Mainfooter
+  },
   data() {
     return {};
   }
